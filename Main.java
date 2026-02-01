@@ -11,13 +11,17 @@ public class Main {
         }
     }
 
+    public static int taxEarnings(int earnings) {
+        return earnings * 6 / 100;
+    }
+
     public static void main(String [] args) {
         Scanner scanner = new Scanner(System.in);
         String input;
         int earnings = 0;
         int spendings = 0;
-        int usm_earn = 0;
-        int usm_earn_spend = 0;
+        int usmEarn = 0;
+        int usmEarnSpend = 0;
         int diff = 0;
 
         
@@ -42,18 +46,18 @@ public class Main {
                     spendings += scanner.nextInt();
                     scanner.nextLine();
                 case 3:
-                    usm_earn = earnings * 6 / 100;
-                    usm_earn_spend = taxEarningsMinusSpendings(earnings, spendings);
-                    if (usm_earn < usm_earn_spend) {
+                    usmEarn = taxEarnings(earnings);
+                    usmEarnSpend = taxEarningsMinusSpendings(earnings, spendings);
+                    if (usmEarn < usmEarnSpend) {
                         System.out.println("Мы советуем вам УСН доходы");
-                        diff = usm_earn_spend - usm_earn;
-                        System.out.println("Ваш налог составит: " + usm_earn);
-                        System.out.println("Налог на другой системе: " + usm_earn_spend);
-                    } else if (usm_earn_spend < usm_earn) {
+                        diff = usmEarnSpend - usmEarn;
+                        System.out.println("Ваш налог составит: " + usmEarn);
+                        System.out.println("Налог на другой системе: " + usmEarnSpend);
+                    } else if (usmEarnSpend < usmEarn) {
                         System.out.println("Мы советуем вам УСН доходы минус расходы");
-                        diff = usm_earn - usm_earn_spend;
-                        System.out.println("Ваш налог составит: " + usm_earn_spend);
-                        System.out.println("Налог на другой системе: " + usm_earn);
+                        diff = usmEarn - usmEarnSpend;
+                        System.out.println("Ваш налог составит: " + usmEarnSpend);
+                        System.out.println("Налог на другой системе: " + usmEarn);
                     }
                         System.out.println("Экономия: " + diff);
                     break;
