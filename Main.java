@@ -26,10 +26,7 @@ public class Main {
 
 
         while (true) {
-            System.out.println("Выберите операцию и введите её номер: \n" +
-                    "1. Добавить новый доход \n" +
-                    "2. Добавить новый расход \n" +
-                    "3. Выбрать систему налогообложения");
+            System.out.println("Выберите операцию и введите её номер: \n" + "1. Добавить новый доход \n" + "2. Добавить новый расход \n" + "3. Выбрать систему налогообложения");
             input = scanner.nextLine();
             if (input.equals("end")) {
                 break;
@@ -45,6 +42,7 @@ public class Main {
                     System.out.println("Введите сумму расхода:");
                     spendings += scanner.nextInt();
                     scanner.nextLine();
+                    break;
                 case 3:
                     usmEarn = taxEarnings(earnings);
                     usmEarnSpend = taxEarningsMinusSpendings(earnings, spendings);
