@@ -15,7 +15,7 @@ public class Main {
         return earnings * 6 / 100;
     }
 
-    public static void main(String [] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String input;
         int earnings = 0;
@@ -24,12 +24,12 @@ public class Main {
         int usmEarnSpend = 0;
         int diff = 0;
 
-        
-        while(true) {
+
+        while (true) {
             System.out.println("Выберите операцию и введите её номер: \n" +
-                                "1. Добавить новый доход \n" +
-                                "2. Добавить новый расход \n" +
-                                "3. Выбрать систему налогообложения");
+                    "1. Добавить новый доход \n" +
+                    "2. Добавить новый расход \n" +
+                    "3. Выбрать систему налогообложения");
             input = scanner.nextLine();
             if (input.equals("end")) {
                 break;
@@ -59,7 +59,7 @@ public class Main {
                         System.out.println("Ваш налог составит: " + usmEarnSpend);
                         System.out.println("Налог на другой системе: " + usmEarn);
                     }
-                        System.out.println("Экономия: " + diff);
+                    System.out.println("Экономия: " + diff);
                     break;
                 default:
                     System.out.println("Такой операции нет");
